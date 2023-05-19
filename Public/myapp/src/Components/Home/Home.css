@@ -1,0 +1,40 @@
+body{
+  background-image: url(./img/AI.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .Card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 280px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid orange;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .Card:hover {
+    width: 520px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+      inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  }
+  
+  p {
+    color: #ffffff;
+    text-align: center;
+  }
+  h1:hover{
+    color: rgb(245, 132, 4);
+}

@@ -1,0 +1,41 @@
+.contact{
+    color: #fff;
+    cursor: pointer;
+}
+.main_Container{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.Sm_container{
+    margin: 10PX;
+    justify-content: center;
+    width: 40%;
+    padding: 3px;
+    height: auto;
+    border: 1px solid #333
+}
+.Sm_container:hover{
+    width: 43%;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+
+}
+b{
+    margin: 2px;
+    padding-left: 3px;
+    color: orange;
+}
+.content{
+    margin: 10PX;
+    padding: 3px;
+}
+.info{
+    color: white;
+    text-decoration: underline;
+
+}
