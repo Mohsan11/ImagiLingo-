@@ -54,26 +54,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className="body">
-          <div className="navbar">
-            <div className="logo"></div>
-            <div className="nav-links">
-              <ul>
-                <li>
-                  <a
-                    href="https://beta.openai.com/docs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-file" aria-hidden="true"></i> OpenAI
-                    Tutorials
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </header>
-
         <main>
           <section className="showcase">
             <form id="image-form">

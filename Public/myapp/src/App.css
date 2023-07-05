@@ -3,3 +3,15 @@
     flex-direction: column;
     height: 100%;
 }
+body{
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    font-weight: 400;
+  }
+  p {
+    font-weight: 200;
+  }
+  h3 {
+    font-weight: 500;
+  }

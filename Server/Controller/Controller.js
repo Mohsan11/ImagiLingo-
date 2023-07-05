@@ -1,5 +1,11 @@
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
+const fetch = require("cross-fetch");
+
+// Rest of your code...
+
+const { API_KEY } = process.env;
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -61,7 +67,76 @@ const generateImage = async (req, res) => {
   }
 };
 
+const allInOne = async (req, res) => {
+  const { inputData, summaryLength } = req.body;
+  try {
+    //Summary
+    const response = await fetch("https://api.ai21.com/studio/v1/summarize", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        source: inputData,
+        sourceType: "TEXT",
+        max_tokens: summaryLength,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error occurred while calling AI21 Studio API");
+    }
+
+    const data = await response.json();
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    //paraphrase
+
+    const paraphrasedData = await fetch(
+      "https://api.ai21.com/studio/v1/paraphrase",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: data.summary,
+        }),
+      }
+    );
+
+    if (!paraphrasedData.ok) {
+      throw new Error(
+        "Error occurred while calling AI21 Studio Paraphrase API"
+      );
+    }
+
+    const data2 = await paraphrasedData.json();
+    // Generate image
+    const imageResponse = await openai.createImage({
+      prompt: data.summary,
+      n: 1,
+      size: "512x512",
+    });
+    const imageUrl = imageResponse.data.data[0].url;
+
+    const data3 = { summary: data };
+    const data4 = { summary: data2 };
+    const imageUrl2 = { summary: imageUrl };
+
+    const response1 = { imageUrl, data, data2 };
+
+    res.status(200).send(response1);
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
 module.exports = {
   textGeneration,
   generateImage,
+  allInOne,
 };

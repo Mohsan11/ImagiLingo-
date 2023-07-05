@@ -6,6 +6,7 @@ import Home from "./Components/Home/Home";
 import Response from "./Components/Response/Response";
 import Image from "./Components/Image/Image";
 import Contact from "./Components/Contact/Contact";
+import AllInOne from "./Components/Mutlitools/AllInOne";
 class App extends Component {
   constructor() {
     super();
@@ -31,6 +32,9 @@ class App extends Component {
 
   handleButton2Click = () => {
     this.setState({ page: "text" });
+  };
+  handleButton3Click = () => {
+    this.setState({ page: "multi" });
   };
 
   homeChanger = () => {
@@ -76,11 +80,14 @@ class App extends Component {
           <Image />
         ) : this.state.page === "contact" ? (
           <Contact />
+        ) : this.state.page === "multi" ? (
+          <AllInOne />
         ) : (
           this.state.page === "home" && (
             <Home
               handleButton1Click={this.handleButton1Click}
               handleButton2Click={this.handleButton2Click}
+              handleButton3Click={this.handleButton3Click}
             />
           )
         )}

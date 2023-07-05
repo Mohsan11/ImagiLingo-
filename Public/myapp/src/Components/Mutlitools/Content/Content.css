@@ -1,0 +1,63 @@
+/* CSS for Summary and Image */
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: rgb(0, 0, 0);
+    background-color:rgb(20, 20, 20);
+  }
+  
+  .resultText {
+    color: silver;
+    background-color: black;
+    flex: 1 1 50%;
+    border: 1px solid white;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  .resultImg {
+    flex: 1 1 20%;
+    border: 1px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* CSS for Paragraph */
+  .resultText p {
+    color: white;
+    margin: 3px;
+  }
+  
+  /* CSS for Suggestion */
+  .suggestion {
+    color: rgb(238, 234, 234);
+    background-color: black;
+    border: 1px solid white;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  .suggestion-card {
+    font-family: "Poppins", sans-serif;
+    font-size: x-large;
+    font-weight: 200;
+    color: rgb(231, 220, 220);
+    background-color: black ;
+    border: 1px solid silver;
+    margin: 5px 0;
+    padding: 5px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  .suggestion-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .resultImg:hover {
+    transform: scale(1.01);
+  }
+  
