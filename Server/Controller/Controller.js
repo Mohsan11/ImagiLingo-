@@ -122,9 +122,9 @@ const allInOne = async (req, res) => {
     });
     const imageUrl = imageResponse.data.data[0].url;
 
-    const data3 = { summary: data };
-    const data4 = { summary: data2 };
-    const imageUrl2 = { summary: imageUrl };
+    // const data3 = { summary: data };
+    // const data4 = { summary: data2 };
+    // const imageUrl2 = { summary: imageUrl };
 
     const response1 = { imageUrl, data, data2 };
 

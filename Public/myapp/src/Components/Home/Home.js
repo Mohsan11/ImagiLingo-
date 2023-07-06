@@ -9,11 +9,7 @@ const Home = ({
     <div className="homeContainer">
       <div className="Card">
         <div>
-          <i
-            onClick={handleButton1Click}
-            className="fa fa-image fa-3x"
-            style={{ padding: "1px", margin: "1px" }}
-          ></i>
+          <i onClick={handleButton1Click} className="fa fa-image fa-3x"></i>
         </div>
         <h1 className="head" onClick={handleButton1Click}>
           Image
@@ -30,11 +26,10 @@ const Home = ({
           <i
             onClick={handleButton2Click}
             className="fa fa-text-height fa-3x"
-            style={{ padding: "1px", margin: "1px" }}
           ></i>
         </div>
         <h1 className="head" onClick={handleButton2Click}>
-          Text
+          Word Wizard
         </h1>
         <p onClick={handleButton2Click}>
           Experience the power of AI-driven text generation. Simply input your
@@ -47,20 +42,17 @@ const Home = ({
       </div>
       <div className="Card">
         <div>
-          <i
-            onClick={handleButton3Click}
-            className="fa fa-image fa-3x"
-            style={{ padding: "1px", margin: "1px" }}
-          ></i>
+          <i onClick={handleButton3Click} className="fa fa-language fa-3x"></i>
         </div>
         <h1 className="head" onClick={handleButton3Click}>
-          MutliTool
+          LingoRevamp
         </h1>
         <p onClick={handleButton3Click}>
-          Unleash your creativity with AI-powered image generation. Transform
-          your ideas into stunning visuals with a click. Explore endless
-          possibilities and bring your imagination to life. Click now to embark
-          on a visual journey of innovation and inspiration.
+          Harness the power of AI-driven text generation. Input your text and
+          command, and witness our intelligent system bring your words to life.
+          From captivating storytelling to generating code snippets, explore
+          endless possibilities with ease. Unleash the potential of text-based
+          AI and embrace a world of limitless opportunities.
         </p>
       </div>
     </div>

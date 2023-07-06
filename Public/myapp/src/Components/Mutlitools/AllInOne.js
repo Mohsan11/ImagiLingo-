@@ -60,9 +60,18 @@ class AllInOne extends Component {
     const { showSpinner, data } = this.state;
     return (
       <div class="Hero-container">
-        <h1 className="hero-heading">Responsive Form</h1>
+        <h1 className="hero-heading head">LingoRevamp</h1>
+        <br></br>
+        <p className="textt">
+          Welcome to LingoRevamp! This powerful tool allows you to enhance and
+          transform your text. To get started, simply enter your text in the
+          input field and specify the desired summary length (default is 200).
+          Click the "Submit" button to generate amazing results. Stay tuned for
+          the magic to happen!
+        </p>
         <form>
           <label for="input1">Input</label>
+
           <input
             type="text"
             id="input1"
@@ -71,6 +80,7 @@ class AllInOne extends Component {
           />
 
           <label for="input2">Summary Length</label>
+
           <input
             className="userInput"
             type="text"

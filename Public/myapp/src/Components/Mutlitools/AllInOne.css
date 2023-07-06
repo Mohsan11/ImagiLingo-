@@ -28,7 +28,15 @@ body {
   margin: 5px;
   padding: 20px;
 }
+.head{
+  margin-bottom: 0%;
+}
 
+.textt{
+  color: #111;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
 #input2 {
   margin: 5px;
   padding: 15px;
@@ -51,6 +59,8 @@ label {
   display: block;
   margin-bottom: 10px;
   color: #333333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 input[type="text"] {
