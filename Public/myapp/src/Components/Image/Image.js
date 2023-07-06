@@ -34,7 +34,7 @@ class App extends Component {
     if (this.state.data === "") {
       console.log("waiting");
     }
-    fetch("http://localhost:5000/openai/generateimage", {
+    fetch("https://wax-available-duke.glitch.me/openai/generateimage", {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({

@@ -33,7 +33,7 @@ class AllInOne extends Component {
     }
     this.setState({ showSpinner: true });
 
-    fetch("http://localhost:5000/openai/allinone", {
+    fetch("https://wax-available-duke.glitch.me/openai/allinone", {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({

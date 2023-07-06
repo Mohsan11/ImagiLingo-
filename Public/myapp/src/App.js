@@ -47,7 +47,7 @@ class App extends Component {
     e.preventDefault();
     console.log("Submitted");
 
-    fetch("http://localhost:5000/openai/textgeneration", {
+    fetch("https://wax-available-duke.glitch.me/openai/textgeneration", {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
