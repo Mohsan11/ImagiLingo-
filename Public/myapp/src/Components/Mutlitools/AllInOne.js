@@ -33,7 +33,7 @@ class AllInOne extends Component {
     }
     this.setState({ showSpinner: true });
 
-    fetch("https://wax-available-duke.glitch.me/openai/allinone", {
+    fetch("https://wax-available-duke.glitch.me/openai/LingoRevamp", {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -94,7 +94,9 @@ class AllInOne extends Component {
             Submit
           </button>
         </form>
-        {showSpinner ? <p>Loading</p> : null}
+        {showSpinner ? (
+          <p style={{ color: "black", fontSize: "20px" }}>Loading</p>
+        ) : null}
         {data && <Content data={data} />}
         {this.state.showSpinner && <div className="spinner"></div>}
         {/* <div id="result">
