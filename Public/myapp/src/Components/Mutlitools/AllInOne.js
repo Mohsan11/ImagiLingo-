@@ -8,7 +8,7 @@ class AllInOne extends Component {
     super();
     this.state = {
       prompt: "",
-      summaryLength: 200, // Initialize the size state with "medium"
+      summaryLength: "",
       data: "",
       showSpinner: false,
     };
@@ -26,6 +26,9 @@ class AllInOne extends Component {
 
   onClickSubmit = (e) => {
     console.log("clicked");
+    if (this.summaryLength === "") {
+      this.setState({ summaryLength: 200 });
+    }
     e.preventDefault();
     if (this.state.prompt === "") {
       alert("Please add some text");
@@ -60,6 +63,7 @@ class AllInOne extends Component {
     const { showSpinner, data } = this.state;
     return (
       <div class="Hero-container">
+        {console.log(this.state.summaryLength)}
         <h1 className="hero-heading head">LingoRevamp</h1>
         <br></br>
         <p className="textt">

@@ -67,8 +67,19 @@ const generateImage = async (req, res) => {
   }
 };
 
+function removeLineBreaksAndCommas(inputData) {
+  // Remove line breaks
+  const stringWithoutLineBreaks = inputData.replace(/\n/g, "");
+
+  // Remove commas
+  const stringWithoutCommas = stringWithoutLineBreaks.replace(/,/g, "");
+
+  return stringWithoutCommas;
+}
+
 const allInOne = async (req, res) => {
   const { inputData, summaryLength } = req.body;
+  const cleanedInputData = removeLineBreaksAndCommas(inputData);
   try {
     //Summary
     const response = await fetch("https://api.ai21.com/studio/v1/summarize", {
@@ -92,28 +103,32 @@ const allInOne = async (req, res) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     //paraphrase
-
-    const paraphrasedData = await fetch(
-      "https://api.ai21.com/studio/v1/paraphrase",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          text: data.summary,
-        }),
-      }
-    );
-
-    if (!paraphrasedData.ok) {
-      throw new Error(
-        "Error occurred while calling AI21 Studio Paraphrase API"
+    let data2;
+    if (data.summary.length > 499) {
+      data2 = "Sorry can't provide any suggestion for this Text.";
+    } else {
+      const paraphrasedData = await fetch(
+        "https://api.ai21.com/studio/v1/paraphrase",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text: data.summary,
+          }),
+        }
       );
-    }
 
-    const data2 = await paraphrasedData.json();
+      // if (!paraphrasedData.ok) {
+      //   throw new Error(
+      //     "Error occurred while calling AI21 Studio Paraphrase API"
+      //   );
+      // }
+
+      data2 = await paraphrasedData.json();
+    }
     // Generate image
     const imageResponse = await openai.createImage({
       prompt: data.summary,
