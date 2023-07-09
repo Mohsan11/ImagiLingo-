@@ -11,12 +11,28 @@
 :root {
   --primary-color: #f9b64d;
 }
-.small{
+
+.small {
   color: #333;
-  font-size: large;
+  font-size: 16px;
   border: none;
   padding: 5px;
 }
+
+.medium {
+  color: #333;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+}
+
+.large {
+  color: #333;
+  font-size: 24px;
+  border: none;
+  padding: 15px;
+}
+
 .body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -80,7 +96,7 @@
 .showcase form input,
 form select {
   font-size: 20px;
-  width: 500px;
+  width: 100%;
   max-width: 500px;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -113,6 +129,8 @@ form button:hover {
 img {
   display: block;
   margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .msg {
@@ -120,6 +138,23 @@ img {
   text-align: center;
   margin-top: 1rem;
 }
-#image{
+
+#image {
   margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .showcase form input,
+  form select {
+    font-size: 16px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  form button {
+    font-size: 16px;
+    padding: 0.8rem 1.6rem;
+    margin-top: 10px;
+  }
 }

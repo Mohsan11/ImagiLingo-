@@ -1,82 +1,93 @@
-body{
+body {
   background-image: url(../img/1711834.gif);
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
 .homeContainer {
-    display: flex;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  }
-.head{
+  display: flex;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.head {
   color: white;
 }
-  .Card {
-    
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 500px;
-    height: 280px;
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid orange;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  i{
-    color: #ffffff;
-    margin-top: 10px;
-    padding: 1px;
-  }
-  .Card:hover {
-    width: 520px;
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
-      inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
-  }
-  
-  p {
-    color: #ffffff;
-    text-align: center;
-  }
-  .head:hover{
-    color: silver;
+
+.Card {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  height: 280px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid orange;
+  flex-direction: column;
+  cursor: pointer;
 }
+
+i {
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 1px;
+}
+
+.Card:hover {
+  width: 520px;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+p {
+  color: #ffffff;
+  text-align: center;
+}
+
+.head:hover {
+  color: silver;
+}
+
 @media screen and (max-width: 1300px) {
   .homeContainer {
     flex-direction: column-reverse;
   }
+
   .Card {
     width: 90%;
     height: auto;
   }
-  
+
   .Card:hover {
     width: 95%;
     height: auto;
   }
-  
 }
+
 @media screen and (max-width: 700px) {
   .Card {
-    width: auto;
+    width: 90%;
     flex-wrap: wrap;
     height: auto;
     margin: 2%;
     padding: 2%;
   }
-  .homeContainer{
-    margin-top: 2px 50px 2px 2px;
-    font-size:small;
+  
+  .homeContainer {
+    margin-top: 10px;
+    font-size: small;
     width: 95%;
-    height: 90vh;
+    height: auto;
+    min-height: 90vh;
   }
+  
   .Card:hover {
     box-shadow: none;
+    width: 90%;
   }
 }
